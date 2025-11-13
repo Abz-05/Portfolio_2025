@@ -29,6 +29,9 @@
   /* Spacing */
   --section-padding: 8rem 0;
   --container-width: 1200px;
+  --gap-sm: 1.5rem;
+  --gap-md: 2.5rem;
+  --gap-lg: 3.5rem;
   
   /* Transitions */
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -492,10 +495,11 @@ body {
   border: 1px solid rgba(147, 168, 214, 0.3);
 }
 
+/* ENHANCED: Better grid alignment for stats */
 .hero__stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--gap-md);
   margin-bottom: 3rem;
 }
 
@@ -565,6 +569,7 @@ body {
 .hero__social {
   display: flex;
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .social-link {
@@ -704,10 +709,12 @@ body {
   background: var(--darker-bg);
 }
 
+/* ENHANCED: Better grid alignment with auto-fit */
 .about__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  gap: 3rem;
+  gap: var(--gap-lg);
+  justify-items: center;
 }
 
 .about__card {
@@ -719,6 +726,8 @@ body {
   text-align: center;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 45rem;
 }
 
 .about__card::before {
@@ -804,7 +813,7 @@ body {
 
 .skills__accordion {
   display: grid;
-  gap: 2rem;
+  gap: var(--gap-md);
 }
 
 .skills__item {
@@ -1079,7 +1088,7 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: var(--gap-sm);
   margin-bottom: 4rem;
 }
 
@@ -1103,10 +1112,12 @@ body {
   transform: translateY(-2px);
 }
 
+/* ENHANCED: Better grid with centered last row items */
 .projects__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(38rem, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
+  gap: var(--gap-lg);
+  justify-items: center;
 }
 
 .project__card {
@@ -1120,6 +1131,8 @@ body {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 50rem;
 }
 
 .project__card::before {
@@ -1330,10 +1343,12 @@ body {
   color: white;
 }
 
+/* ENHANCED: Better grid with centered last row items */
 .cert__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: var(--gap-md);
+  justify-items: center;
   transition: var(--transition);
 }
 
@@ -1345,6 +1360,8 @@ body {
   grid-column: 1 / -1;
   margin-top: 3rem;
   margin-bottom: 2rem;
+  width: 100%;
+  justify-self: stretch;
 }
 
 .cert__category:first-child {
@@ -1375,11 +1392,14 @@ body {
   transition: var(--transition);
   cursor: pointer;
   position: relative;
+  width: 100%;
+  max-width: 40rem;
 }
 
 .cert__grid.list-view .cert__card {
   display: flex;
   flex-direction: row;
+  max-width: 100%;
 }
 
 .cert__card:hover {
@@ -1399,6 +1419,7 @@ body {
 .cert__grid.list-view .cert__image {
   width: 25rem;
   height: auto;
+  flex-shrink: 0;
 }
 
 .cert__card:hover .cert__image {
@@ -1603,10 +1624,12 @@ body {
   background: var(--dark-bg);
 }
 
+/* ENHANCED: Better grid with centered last row items */
 .contact__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  gap: 2.5rem;
+  gap: var(--gap-md);
+  justify-items: center;
 }
 
 .contact__card {
@@ -1617,6 +1640,8 @@ body {
   transition: var(--transition);
   text-align: center;
   position: relative;
+  width: 100%;
+  max-width: 35rem;
 }
 
 .contact__card:hover {
@@ -1662,6 +1687,7 @@ body {
   text-decoration: none;
   transition: var(--transition);
   display: inline-block;
+  word-break: break-word;
 }
 
 .contact__card a:hover {
@@ -1895,7 +1921,7 @@ body {
   }
 
   .hero__stats {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   }
 
   .timeline::before {
@@ -2001,6 +2027,7 @@ body {
   .cert__filter-btn {
     flex: 1;
     justify-content: center;
+    min-width: 45%;
   }
 
   .projects__grid {
