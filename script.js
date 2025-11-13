@@ -1,5 +1,5 @@
 // ===== ENHANCED PORTFOLIO JAVASCRIPT =====
-// Retain all original functionality + add new interactive features
+// Retain all original functionality + improved structure
 
 // ===== UTILITY FUNCTIONS =====
 function showToast(message) {
@@ -324,7 +324,6 @@ const certificationsData = {
   ]
 };
 
-// Continue in next part...
 // ===== PROJECTS DATA =====
 const projectsData = [
   {
@@ -666,12 +665,52 @@ document.addEventListener('keydown', (e) => {
 const projectModalData = {
   'sea-sure': {
     title: 'SEA-SURE: Smart Seafood Freshness Monitoring System',
-    problem: 'Seafood supply chains lack transparency and traceability...',
-    approach: 'Dual ML pipeline with ResNet50 and XGBoost...',
-    evaluation: 'Species: 99.47% accuracy, Freshness: R²=0.804...',
-    lessons: 'Modular design, prompt engineering, reproducibility...'
+    problem: 'Seafood supply chains face critical transparency and traceability challenges, leading to food waste, economic losses, and consumer safety risks. The absence of real-time quality assessment systems results in inefficient distribution and reduced shelf-life prediction accuracy.',
+    approach: 'Developed an end-to-end AI platform with dual machine learning pipeline: (1) CNN-based species classifier using transfer learning with ResNet50 achieving 99.47% accuracy across 18 fish species, and (2) XGBoost regression model predicting remaining shelf life with R² = 0.804. Integrated QR-based traceability system with PostgreSQL/PostGIS geo-fencing for maritime compliance. Built Progressive Web App with offline-first architecture and role-based access control.',
+    evaluation: 'Species Classification: 99.47% accuracy, 98.9% precision, 99.1% recall. Freshness Prediction: R² = 0.804, RMSE = 1.2 days. System achieved 25% latency reduction through feature engineering optimizations. Successfully processed 10,000+ images with real-time inference capabilities on edge devices.',
+    impact: 'Platform enables transparent supply chain tracking from catch to consumer, reducing food waste by up to 30% through accurate shelf-life prediction. Geo-fencing ensures maritime safety compliance, while PWA architecture supports offline operations in low-connectivity fishing environments.',
+    lessons: 'Modular design patterns enabled independent model updates without system-wide redeployment. Custom data augmentation pipeline significantly improved model robustness. GridSearchCV hyperparameter optimization was critical for production-grade performance. Reproducible workflows through comprehensive documentation accelerated deployment cycles.'
+  },
+  'pothole': {
+    title: 'Road Reboot - AI Pothole Detection',
+    problem: 'Urban road infrastructure monitoring relies on manual inspections, leading to delayed maintenance, increased vehicle damage costs, and safety hazards. Lack of automated real-time detection systems prevents proactive infrastructure management.',
+    approach: 'Developed mobile-first computer vision application using custom CNN architecture trained on diverse road condition datasets. Implemented OpenCV preprocessing pipeline for real-time frame analysis optimized for mobile devices. Integrated geolocation tagging with automated municipal reporting API.',
+    evaluation: 'On-device inference achieves <200ms latency on mid-range smartphones. Model demonstrates robust performance across varying lighting conditions, weather, and road surfaces through comprehensive data augmentation.',
+    impact: 'Enables crowdsourced infrastructure monitoring, providing municipalities with real-time road condition data. Privacy-preserving on-device inference eliminates data transmission concerns while maintaining detection accuracy.',
+    lessons: 'Mobile optimization requires careful balance between model complexity and inference speed. Transfer learning from larger datasets significantly improved generalization. Community-driven data collection models can scale infrastructure monitoring beyond traditional methods.'
+  },
+  'healthcare': {
+    title: 'Healthcare Data Analysis Platform',
+    problem: 'Healthcare administrators lack comprehensive analytical tools to extract actionable insights from patient records, leading to suboptimal resource allocation and missed cost-saving opportunities.',
+    approach: 'Conducted exploratory data analysis on 10,000+ patient records using Python (Pandas, NumPy, Matplotlib) and SQL. Developed 12+ interactive KPI dashboards in Power BI visualizing demographics, treatment outcomes, and resource utilization patterns. Applied statistical modeling for patient readmission risk assessment.',
+    evaluation: 'Analysis uncovered 15% potential cost reduction through optimized resource allocation. Predictive models achieved 82% accuracy in readmission risk classification. Dashboards reduced report generation time by 70%.',
+    impact: 'Data-driven recommendations enabled administrators to optimize staffing schedules, reduce operational costs, and improve patient outcome tracking. Interactive visualizations facilitated evidence-based decision-making across departments.',
+    lessons: 'Domain expertise integration is critical for meaningful healthcare analytics. Stakeholder collaboration during dashboard design ensures adoption. Data cleaning and validation consumed 40% of project time but were essential for accurate insights.'
+  },
+  'trendella': {
+    title: 'Trendella E-Commerce Platform',
+    problem: 'Client required modern, performant e-commerce solution for women\'s clothing with responsive design, dynamic UI components, and optimized user experience across all devices.',
+    approach: 'Built full-featured e-commerce website using HTML5, CSS3, JavaScript, and Bootstrap. Engineered modular JavaScript components for interactive carousels, multi-filter product displays, and real-time form validation. Participated in complete SDLC from requirements gathering through deployment.',
+    evaluation: 'Achieved 90+ Lighthouse performance score across Performance, Accessibility, Best Practices, and SEO metrics. Cross-browser testing verified compatibility across Chrome, Firefox, Safari, and Edge. Mobile-first design ensured optimal experience on all screen sizes.',
+    impact: 'Delivered production-ready platform within client timeline and budget. Collaborated in Agile sprints, contributing to code reviews and resolving 15+ functional issues. Gained comprehensive SDLC experience from design to client delivery.',
+    lessons: 'Modular code architecture simplifies maintenance and feature additions. Performance optimization requires attention to image compression, minification, and lazy loading. Client communication and iterative feedback loops are essential for successful delivery.'
+  },
+  'gameathon': {
+    title: 'Educational Gamification Platform',
+    problem: 'Traditional educational content struggles to maintain student engagement. Challenge: Build innovative learning platform combining game mechanics with educational objectives within 24-hour hackathon timeframe.',
+    approach: 'Developed interactive learning platform using React.js with modular component architecture. Implemented immersive storytelling with branching narratives and real-time user interactions. Team Tech Mavericks collaborated across frontend development, game mechanics design, and content integration.',
+    evaluation: 'Successfully completed functional MVP within 24-hour sprint, competing against 80+ teams. Judges recognized innovation in educational technology and seamless integration of learning objectives with engaging gameplay.',
+    impact: 'Secured 3rd place among 80+ teams at SRM Chennai Game-A-Thon 2025. Platform demonstrated viability of gamification for enhanced student engagement and knowledge retention.',
+    lessons: 'Rapid prototyping requires clear role delegation and continuous integration. React\'s component-based architecture enabled parallel development. Time-boxed sprints demand ruthless prioritization of core features over nice-to-haves.'
+  },
+  'mechconnect': {
+    title: 'MechConnect - Real-Time Matching Platform',
+    problem: 'Urban vehicle breakdowns lead to extended downtime and safety risks due to inefficient mechanic-driver coordination. Challenge: Build real-time matching platform addressing UN SDG 11 (Sustainable Cities) within 12-hour hackathon.',
+    approach: 'Led 4-member team through ideation, development, and pitch presentation. Architected dual-app MVP with real-time location-based matching algorithm using proximity optimization. Implemented separate interfaces for mechanics and drivers with push notification integration.',
+    evaluation: 'Completed functional dual-app MVP within 12-hour sprint among 50+ competing teams. Demonstrated scalable architecture and clear value proposition addressing sustainable urban mobility challenges.',
+    impact: 'Secured Runner-Up position at TechThrone 2k25 Hackathon. Leadership and technical execution earned internship offer. Platform concept validated market need for efficient roadside assistance coordination.',
+    lessons: 'Effective team leadership requires clear vision communication and rapid decision-making. MVP scope definition is critical in time-constrained environments. Pitch presentation quality matters as much as technical implementation for hackathon success.'
   }
-  // Add other project details as needed
 };
 
 function openProjectModal(projectId) {
@@ -683,11 +722,43 @@ function openProjectModal(projectId) {
   
   modalBody.innerHTML = `
     <h2 style="font-size: 3rem; margin-bottom: 2rem; color: var(--primary-color);">${data.title}</h2>
+    
     <div style="margin-bottom: 3rem;">
-      <h3 style="font-size: 2rem; margin-bottom: 1rem;">Problem Statement</h3>
-      <p style="color: var(--text-secondary); line-height: 1.8;">${data.problem}</p>
+      <h3 style="font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--text-primary);">
+        <i class='bx bx-error-circle' style="color: var(--primary-color);"></i> Problem Statement
+      </h3>
+      <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.6rem;">${data.problem}</p>
     </div>
-    <!-- Add more sections -->
+    
+    <div style="margin-bottom: 3rem;">
+      <h3 style="font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--text-primary);">
+        <i class='bx bx-bulb' style="color: var(--primary-color);"></i> Approach & Implementation
+      </h3>
+      <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.6rem;">${data.approach}</p>
+    </div>
+    
+    <div style="margin-bottom: 3rem;">
+      <h3 style="font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--text-primary);">
+        <i class='bx bx-bar-chart-alt-2' style="color: var(--primary-color);"></i> Evaluation & Results
+      </h3>
+      <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.6rem;">${data.evaluation}</p>
+    </div>
+    
+    ${data.impact ? `
+    <div style="margin-bottom: 3rem;">
+      <h3 style="font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--text-primary);">
+        <i class='bx bx-target-lock' style="color: var(--primary-color);"></i> Impact & Outcomes
+      </h3>
+      <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.6rem;">${data.impact}</p>
+    </div>
+    ` : ''}
+    
+    <div style="margin-bottom: 0;">
+      <h3 style="font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--text-primary);">
+        <i class='bx bx-book-open' style="color: var(--primary-color);"></i> Key Learnings
+      </h3>
+      <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.6rem;">${data.lessons}</p>
+    </div>
   `;
   
   modal.classList.add('active');
@@ -723,10 +794,11 @@ function openResume(event) {
       <button onclick="this.parentElement.parentElement.remove(); document.body.style.overflow='auto'" 
         style="position: absolute; top: -50px; right: 0; width: 40px; height: 40px; border-radius: 50%; 
         background: rgba(147, 168, 214, 0.2); color: white; font-size: 24px; cursor: pointer; 
-        border: 2px solid #93a8d6; display: flex; align-items: center; justify-content: center;">
+        border: 2px solid #93a8d6; display: flex; align-items: center; justify-content: center;"
+        aria-label="Close resume viewer">
         ✕
       </button>
-      <embed src="Abz_@%@%.pdf" type="application/pdf" width="100%" height="800px" 
+      <embed src="Abzana-Varhath-format_.pdf" type="application/pdf" width="100%" height="800px" 
         style="border: 2px solid #93a8d6; border-radius: 10px;" />
     </div>
   `;
@@ -743,4 +815,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // Console branding
   console.log('%c🚀 Welcome to Abzana Varhath\'s Portfolio!', 'color: #93a8d6; font-size: 20px; font-weight: bold;');
   console.log('%c📊 Data Science | 🤖 ML | 💻 Full-Stack', 'color: #bbd3fa; font-size: 14px;');
+  console.log('%cEnhanced with improved grid layouts and professional structure', 'color: #94a3b8; font-size: 12px;');
 });
