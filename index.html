@@ -118,11 +118,11 @@
         </div>
         
         <div class="hero__social">
-          <a href="https://www.linkedin.com/in/abzana-v-51876431a" target="_blank" aria-label="LinkedIn" class="social-link">
+          <a href="https://www.linkedin.com/in/abzana-v-51876431a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
             <i class='bx bxl-linkedin'></i>
             <span class="tooltip">LinkedIn</span>
           </a>
-          <a href="https://github.com/Abz-05" target="_blank" aria-label="GitHub" class="social-link">
+          <a href="https://github.com/Abz-05" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link">
             <i class='bx bxl-github'></i>
             <span class="tooltip">GitHub</span>
           </a>
@@ -574,7 +574,7 @@
           </div>
           <h3>Email</h3>
           <a href="mailto:abzanavarhath@gmail.com">abzanavarhath@gmail.com</a>
-          <button class="copy-btn" data-copy="abzanavarhath@gmail.com">
+          <button class="copy-btn" data-copy="abzanavarhath@gmail.com" aria-label="Copy email">
             <i class='bx bx-copy'></i>
           </button>
         </div>
@@ -585,7 +585,7 @@
           </div>
           <h3>Phone</h3>
           <a href="tel:+919566977038">+91 95669 77038</a>
-          <button class="copy-btn" data-copy="+919566977038">
+          <button class="copy-btn" data-copy="+919566977038" aria-label="Copy phone number">
             <i class='bx bx-copy'></i>
           </button>
         </div>
@@ -595,7 +595,7 @@
             <i class='bx bxl-linkedin'></i>
           </div>
           <h3>LinkedIn</h3>
-          <a href="https://www.linkedin.com/in/abzana-v-51876431a" target="_blank">Abzana V</a>
+          <a href="https://www.linkedin.com/in/abzana-v-51876431a" target="_blank" rel="noopener noreferrer">Abzana V</a>
         </div>
         
         <div class="contact__card" data-animate="fade-up" style="animation-delay: 0.4s">
@@ -603,7 +603,7 @@
             <i class='bx bxl-github'></i>
           </div>
           <h3>GitHub</h3>
-          <a href="https://github.com/Abz-05" target="_blank">@Abz-05</a>
+          <a href="https://github.com/Abz-05" target="_blank" rel="noopener noreferrer">@Abz-05</a>
         </div>
         
         <div class="contact__card" data-animate="fade-up" style="animation-delay: 0.5s">
@@ -619,7 +619,7 @@
             <i class='bx bx-globe'></i>
           </div>
           <h3>Portfolio</h3>
-          <a href="https://abz-05.github.io/portfolio" target="_blank">abz-05.github.io</a>
+          <a href="https://abz-05.github.io/portfolio" target="_blank" rel="noopener noreferrer">abz-05.github.io</a>
         </div>
         
         <div class="contact__card contact__card--resume" data-animate="fade-up" style="animation-delay: 0.7s">
@@ -665,8 +665,8 @@
           <div class="footer__column">
             <h4>Connect</h4>
             <ul>
-              <li><a href="https://www.linkedin.com/in/abzana-v-51876431a" target="_blank">LinkedIn</a></li>
-              <li><a href="https://github.com/Abz-05" target="_blank">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/abzana-v-51876431a" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="https://github.com/Abz-05" target="_blank" rel="noopener noreferrer">GitHub</a></li>
               <li><a href="mailto:abzanavarhath@gmail.com">Email</a></li>
               <li><a href="tel:+919566977038">Phone</a></li>
             </ul>
@@ -687,10 +687,10 @@
       <div class="footer__bottom">
         <p>&copy; 2025 Abzana Varhath. All Rights Reserved.</p>
         <div class="footer__social">
-          <a href="https://www.linkedin.com/in/abzana-v-51876431a" target="_blank" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/abzana-v-51876431a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <i class='bx bxl-linkedin'></i>
           </a>
-          <a href="https://github.com/Abz-05" target="_blank" aria-label="GitHub">
+          <a href="https://github.com/Abz-05" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <i class='bx bxl-github'></i>
           </a>
           <a href="mailto:abzanavarhath@gmail.com" aria-label="Email">
@@ -708,7 +708,7 @@
 
   <!-- Certificate Modal -->
   <div class="cert__modal" id="cert-modal">
-    <button class="cert__modal-close" id="modal-close">
+    <button class="cert__modal-close" id="modal-close" aria-label="Close modal">
       <i class='bx bx-x'></i>
     </button>
     <div class="cert__modal-content">
@@ -723,7 +723,7 @@
   <!-- Project Modal -->
   <div class="project__modal" id="project-modal">
     <div class="project__modal-content">
-      <button class="project__modal-close" onclick="closeProjectModal()">
+      <button class="project__modal-close" onclick="closeProjectModal()" aria-label="Close modal">
         <i class='bx bx-x'></i>
       </button>
       <div id="project-modal-body"></div>
@@ -731,7 +731,7 @@
   </div>
 
   <!-- Notification Toast -->
-  <div class="toast" id="toast">
+  <div class="toast" id="toast" role="alert" aria-live="polite">
     <i class='bx bx-check-circle'></i>
     <span id="toast-message"></span>
   </div>
