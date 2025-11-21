@@ -798,7 +798,7 @@ function openResume(event) {
         aria-label="Close resume viewer">
         ✕
       </button>
-      <embed src="Abzana-Varhath-format_.pdf" type="application/pdf" width="100%" height="800px" 
+      <embed src="ABZ_2K25_CV.pdf" type="application/pdf" width="100%" height="800px" 
         style="border: 2px solid #93a8d6; border-radius: 10px;" />
     </div>
   `;
@@ -817,3 +817,4 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('%c📊 Data Science | 🤖 ML | 💻 Full-Stack', 'color: #bbd3fa; font-size: 14px;');
   console.log('%cEnhanced with improved grid layouts and professional structure', 'color: #94a3b8; font-size: 12px;');
 });
+
